@@ -1,8 +1,10 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:my_first_app/core/assets_manager.dart';
 import 'package:my_first_app/extensions/context_extension.dart';
+import 'package:my_first_app/features/main_layout/hadith_tab/hadith_card_view.dart';
 
-import 'package:my_first_app/hadith_card_view.dart';
+
 
 
 
@@ -33,18 +35,18 @@ class _HadithTabState extends State<HadithTab> {
             Image.asset(ImageAssets.islamiLogo),
 
             SizedBox(height:context.getHeight * 0.04),
-           Expanded(
-             child: Padding(
-               padding: const EdgeInsets.symmetric(vertical: 10),
-               child: ListView.separated(
-                separatorBuilder: (context,index)=>SizedBox(width: 16,),
-                scrollDirection: Axis.horizontal,
-                itemCount: 50,
-                itemBuilder: (context,index){
+            CarouselSlider(
+              options: CarouselOptions(
+                height: 500,
+                enlargeCenterPage: true,
+                enlargeFactor: 0.2,
+
+              ),
+                items: List.generate(50, (index)=>index).map((index){
                   return HadithCardView(hadithIndex: index);
-                }),
-             ),
-           )
+                }).toList(), 
+            )
+
           ],
         ),
       ),
