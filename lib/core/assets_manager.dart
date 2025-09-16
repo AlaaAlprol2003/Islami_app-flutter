@@ -1,24 +1,38 @@
 abstract class ImageAssets {
   static const String base = "assets/images";
   static const String splashLogo = "$base/splash_logo.png";
-  static const String brandingLogo = "$base/brand_logo.png";
-  static const String quranTabBgImage = "$base/quran_tab_bg_image.png";
+  static const String brandingImage = "$base/branding_image.png";
   static const String islamiLogo = "$base/islami_logo.png";
-  static const String recentCardImage = "$base/recent_card_image.png";
-  static const String suraNumberBg = "$base/sura_number_bg_1x.png";
-  static const String hadithPatternImageLeft = "$base/hadith_pattern_image_left.png";
-  static const String hadithPatternImageRight = "$base/hadith_pattern_image_right.png";
-  static const String patternImageLeftCorner = "$base/pattern_image_left_corner.png";
-  static const String patternImageRightCorner = "$base/pattern_image_right_corner.png";
-  static const String suraDetailsImageBottom = "$base/sura_details_image_bottom.png";
+  static const String mostRecentCardImage = "$base/most_recent_card_image.png";
+  static const String quranTabBg = "$base/quran_tab_bg.png";
+  static const String suraNumberBg = "$base/sura_number_bg.png";
+  static const String suraDetailsPatternLeft = "$base/sura_details_pattern_left.png";
+  static const String suraDetailsPatternRight = "$base/sura_details_pattern_right.png";
+  static const String hadithTabBg = "$base/hadith_tab_bg.png";
+  static const String hadithCardBgImage = "$base/hadith_card_bg_image.png";
+  static const String hadithCardBottomImage = "$base/hadith_card_bottom_image.png";
+  static const String sebhaTabBgImage = "$base/sebha_tab_bg_image.png";
+  static const String sebhaImage = "$base/sebha_image (1).png";
+  static const String radioTabBgImage = "$base/radio_tab_bg_image.png";
+  static const String timeTabBgImage = "$base/time_tab_bg_image.png";
+  static const String onboardingImage1 = "$base/onboarding_image1.png";
+  static const String onboardingImage2 = "$base/onboarding_image2.png";
+  static const String onboardingImage3 = "$base/onboarding_image3.png";
+  static const String onboardingImage4 = "$base/onboarding_image4.png";
+  static const String onboardingImage5 = "$base/onboarding_image5.png";
+
+
+
 
 }
 
-abstract class IconAssets{
+abstract class IconAssets {
   static const String base = "assets/images";
-  static const String quran = '$base/quran_icon.png';
-  static const String hadith = '$base/hadith_icon.png';
-  static const String sebha = '$base/sebha_icon.png';
-  static const String radio = '$base/radio_icon.png';
-  static const String time = '$base/time_icon.png';
+  static const String quran = "$base/quran_icon.png";
+  static const String hadith = "$base/hadith_icon.png";
+  static const String sebha = "$base/sebha_icon.png";
+  static const String radio = "$base/radio_icon.png";
+  static const String time = "$base/time.png";
 }
+
+abstract class SvgAssets {}

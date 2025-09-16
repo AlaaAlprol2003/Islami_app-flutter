@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:my_first_app/core/assets_manager.dart';
 import 'package:my_first_app/core/colors_manager.dart';
+import 'package:my_first_app/features/main_layout/quran_tab/sura_list_item.dart';
 import 'package:my_first_app/features/sura_details_screen/verses_item.dart';
-import 'package:my_first_app/models/sura_model.dart';
+
 
 class SuraDetailsScreen extends StatefulWidget {
   const SuraDetailsScreen({super.key});
@@ -13,21 +14,26 @@ class SuraDetailsScreen extends StatefulWidget {
 }
 
 class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
-  late SuraModel suraArguments;
+  late SuraDetailsArguments suraArguments;
   String suraContent = '';
   List<String> suraVerses = [];
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    suraArguments = ModalRoute.of(context)?.settings.arguments as SuraModel;
-    loadSuraContent(suraArguments.suraIndex);
+    suraArguments = ModalRoute.of(context)?.settings.arguments as SuraDetailsArguments;
+    loadSuraContent(suraArguments.sura.suraIndex);
+  }
+  @override
+  void dispose() {
+    suraArguments.mostRecentKey.currentState?.fetchMostRecent();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     
     return Scaffold(
-      appBar: AppBar(title: Text(suraArguments.suraNameEnglish)),
+      appBar: AppBar(title: Text(suraArguments.sura.suraNameEnglish)),
       body: Column(
         children: [
           Padding(
@@ -35,16 +41,16 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Image.asset(ImageAssets.patternImageLeftCorner),
+                Image.asset(ImageAssets.suraDetailsPatternLeft),
                 Text(
-                  suraArguments.suraNameArabic,
+                  suraArguments.sura.suraNameArabic,
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
                     color: ColorsManager.gold,
                   ),
                 ),
-                Image.asset(ImageAssets.patternImageRightCorner),
+                Image.asset(ImageAssets.suraDetailsPatternRight),
               ],
             ),
           ),
@@ -58,7 +64,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
                   itemCount: suraVerses.length,
                 ),
           ),
-          Image.asset(ImageAssets.suraDetailsImageBottom),
+          ///Image.asset(ImageAssets.),
         ],
       ),
     );

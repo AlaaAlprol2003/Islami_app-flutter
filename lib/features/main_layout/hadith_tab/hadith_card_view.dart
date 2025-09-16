@@ -5,8 +5,6 @@ import 'package:flutter/services.dart';
 import 'package:my_first_app/core/assets_manager.dart';
 import 'package:my_first_app/core/colors_manager.dart';
 
-
-
 class HadithCardView extends StatefulWidget {
   HadithCardView({super.key, required this.hadithIndex});
   int hadithIndex;
@@ -16,7 +14,6 @@ class HadithCardView extends StatefulWidget {
 }
 
 class _HadithCardViewState extends State<HadithCardView> {
-  /// HadithModel? hadith;
   String hadithContent = '';
   String hadithTitle = '';
   @override
@@ -28,7 +25,7 @@ class _HadithCardViewState extends State<HadithCardView> {
         borderRadius: BorderRadius.circular(20),
 
         image: DecorationImage(
-          image: AssetImage("assets/images/HadithCardBackGround 1.png"),
+          image: AssetImage(ImageAssets.hadithCardBgImage),
         ),
       ),
       child: Column(
@@ -41,9 +38,9 @@ class _HadithCardViewState extends State<HadithCardView> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Image.asset(ImageAssets.hadithPatternImageLeft),
+                    Image.asset(ImageAssets.suraDetailsPatternLeft),
 
-                    Image.asset(ImageAssets.hadithPatternImageRight),
+                    Image.asset(ImageAssets.suraDetailsPatternRight),
                   ],
                 ),
                 if (hadithTitle.isNotEmpty)
@@ -73,7 +70,7 @@ class _HadithCardViewState extends State<HadithCardView> {
                     ),
             ),
           ),
-          Image.asset("assets/images/Mosque-02 2.png"),
+          Image.asset(ImageAssets.hadithCardBottomImage),
         ],
       ),
     );
@@ -88,7 +85,6 @@ class _HadithCardViewState extends State<HadithCardView> {
     hadithLines.removeAt(0);
 
     hadithContent = hadithLines.join();
-
 
     setState(() {});
   }

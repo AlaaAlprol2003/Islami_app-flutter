@@ -3,12 +3,14 @@ import 'package:my_first_app/core/assets_manager.dart';
 import 'package:my_first_app/core/colors_manager.dart';
 import 'package:my_first_app/features/main_layout/hadith_tab/hadith_tab.dart';
 import 'package:my_first_app/features/main_layout/quran_tab/quran_tab.dart';
-import 'package:my_first_app/features/main_layout/radio_tab/radio_tab.dart';
-import 'package:my_first_app/features/main_layout/sebha_tab/sebha_tab.dart';
+import 'package:my_first_app/features/main_layout/radio_tab/radio.dart';
+import 'package:my_first_app/features/main_layout/sebha_tab/tasbeh_tab.dart';
+
+
 import 'package:my_first_app/features/main_layout/time_tab/time_tab.dart';
 
 class MainLayout extends StatefulWidget {
-   MainLayout({super.key});
+  const MainLayout({super.key});
 
   @override
   State<MainLayout> createState() => _MainLayoutState();
@@ -19,7 +21,7 @@ class _MainLayoutState extends State<MainLayout> {
 List<Widget> tabs = [
   QuranTab(),
   HadithTab(),
-  SebhaTab(),
+  TasbehTab(),
   RadioTab(),
   TimeTab(),
 ];
